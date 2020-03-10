@@ -9,7 +9,6 @@
 UIView* keyPlane; // view to which we will add button
 CGRect decimalButtonRect;
 UIColor* decimalButtonBGColor;
-UIColor *decimalButtonFGcolor = [UIColor whiteColor];
 UIButton *decimalButton;
 BOOL isAppInBackground=NO;
 
@@ -70,8 +69,8 @@ BOOL isAppInBackground=NO;
     NSDictionary *settings = self.commandDelegate.settings;
     
     if ([settings cordovaBoolSettingForKey:@"KeyboardAppearanceDark" defaultValue:NO]) {
-        [decimalButton setTitleColor:[UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1.0] forState:UIControlStateNormal];
-        [decimalButton setForegroundColor:decimalButtonFGColor];
+        // [decimalButton setTitleColor:[UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1.0] forState:UIControlStateNormal];
+        decimalButton.setTitleColor(.white, for: .normal);        
     } else {
         [decimalButton setTitleColor:UIColor.blackColor forState:UIControlStateNormal];
     }
